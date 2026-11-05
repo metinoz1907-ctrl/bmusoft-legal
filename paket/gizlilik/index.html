@@ -35,7 +35,7 @@ function render(l){const d=T[l];document.documentElement.lang=l;document.title=A
  document.getElementById("langs").innerHTML=L.map(x=>`<button type="button" data-l="${x}" aria-pressed="${x===l}">${T[x].name}</button>`).join("");
  const sec=(id,h,items)=>`<section class="card" id="${l}-${id}"><h2>${h}</h2><p class="upd">${d.updated}</p>${id==="privacy"?`<p class="intro">${d.intro}</p>`:""}${items.map(([a,b])=>`<h3>${a}</h3>${b.startsWith("<")?b:`<p>${b}</p>`}`).join("")}</section>`;
  document.getElementById("main").innerHTML=`<div class="tabs"><a href="#${l}-privacy">${d.privacy}</a><a href="#${l}-terms">${d.terms}</a><a href="#${l}-contact">${d.contact}</a></div>`+sec("privacy",d.privacy,d.p)+sec("terms",d.terms,d.t)+
-  `<section class="card" id="${l}-contact"><h2>${d.contact}</h2><div class="kv"><span>${d.dev}</span><b>${DEV}</b></div><div class="kv"><span>${d.support}</span><a href="mailto:destek@bmusoft.com?subject=${APP}">destek@bmusoft.com</a></div></section>`;
+  `<section class="card" id="${l}-contact"><h2>${d.contact}</h2><div class="kv"><span>${d.dev}</span><b>${DEV}</b></div><div class="kv"><span>${d.support}</span><a href="mailto:metin.ozzz@icloud.com?subject=${APP}">metin.ozzz@icloud.com</a></div></section>`;
  document.getElementById("foot").textContent="© "+new Date().getFullYear()+" "+DEV+" · "+APP;}
 document.addEventListener("click",e=>{const b=e.target.closest("[data-l]");if(b){e.preventDefault();const l=b.dataset.l;render(l);
   try{localStorage.setItem(KEY,l);}catch(x){}try{history.replaceState(null,"","#"+l+"-privacy");}catch(x){}window.scrollTo(0,0);return;}
